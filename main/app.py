@@ -21,13 +21,9 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/', methods=['POST'])
-def home_post():
-    text = request.form['text']
-    if ("vegetarian" in text):
-        processed_text = text.upper()
-    else:
-        processed_text = text
+@app.route('/swipe', methods=['GET'])
+def swipe():
+    return render_template('swipe.html')
 
-
-    return processed_text
+if __name__ == "__main__":
+    app.run()
