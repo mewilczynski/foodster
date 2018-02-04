@@ -47,6 +47,13 @@ body {
     animation-direction: forward;
 }
 
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 form {
   margin-top: 400px;
   margin-left: 400px;
@@ -78,12 +85,6 @@ form {
   opacity:0;
 }
 
-.responsive {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-}
-
 .rbutton {
     background-color: #fe9365; /* Green */
     border: none;
@@ -109,8 +110,11 @@ form {
     color: white;
 }
 
+
+
 </style>
 </head>
+
 <body>
 
 <div class="header">
@@ -120,14 +124,19 @@ form {
   </div>
 </div>
 
-<div>
+<form>
+  <div id="container">
   <button class="button rbutton">Right</button>
   <button class="button lbutton">Left</button>
     <div id="cf">
-        <img class="bottom" class=responsive src="img1" width="600" height="400">
-        <img class="top" class=responsive src="img2" width="600" height="400" />
+        <img class="bottom" class=responsive src="img1" style="width:500px;height:600px;">
+        <img class="top" class=responsive src="img2" style="width:500px;height:600px;" />
       </div>
-  <input type="rbutton" class="rbutton" value="Right Button">
+      <padding-top: "500"><padding-right: "50"><padding-left: "50">
+      <label>Label1</label>
+      <label>Label2</label>
+      <label>Label3</label></pad></pad></pad>
+    </2F>
 </form>
 
 </body>
