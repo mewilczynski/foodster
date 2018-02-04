@@ -17,6 +17,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+
+    return render_template('index.html')
+
+@app.route('/swipe', methods=['GET'])
+def swipe():
     cf_list = ProcessImage(food_img)
     list_1, list_2, list_3 = ProcessImageLabels(food_img)
     print(list_1)
@@ -26,15 +31,13 @@ def home():
     print(name)
     print(name1)
     print(name2)
+    return render_template('swipe.html')
 
-    return render_template('index.html')
+@app.route('/handle_data', methods=['POST'])
+def handle_data():
+    projectpath = request.form['projectFilepath']
 
-
- # @app.route('/', methods=['POST'])
- # def handle_data():
- #     projectpath = request.form['projectFilepath']
- #
- #     return
+    return
 
 
 if __name__ == "__main__":
