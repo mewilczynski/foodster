@@ -113,6 +113,11 @@ alil {
     padding-right: 40px;
 }
 
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
 
 </style>
 </head>
@@ -125,10 +130,10 @@ alil {
   </div>
 </div>
 
-<form>
+<div>
   <alil><input type="lbutton" class="lbutton" value="Left Button"></alil>
     <div id="cf">
-        <img class="bottom" src="img1" />
+        <img class="bottom" class=responsive src="img1" width="600" height="400"/>
         <img class="top" src="img2" />
       </div>
   <alir><input type="rbutton" class="rbutton" value="Right Button"></alir>
