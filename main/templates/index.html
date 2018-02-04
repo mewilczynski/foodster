@@ -9,6 +9,9 @@ body {
   font-size: 40px;
   font-family: 'Oswald', sans-serif;
   color: white;
+  background-image: url('templates/cravesbg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
@@ -129,10 +132,23 @@ alil {
     text-align: center;
 }
 
+.button {
+    background-color: #fe9365;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 </style>
 </head>
 
-<body style="background-color:#f1da90;">
+<body>
 
 <div class="header">
   <h2 style="color: #ffede5">Craves</h2>
@@ -146,7 +162,6 @@ alil {
     <div class="container">
       <label>Name: </label>
       <input type="text" placeholder=" " name="name" required>
-    </div>
 
     <div class="restr">
       <alic><label>Restrictions: <label></alic>
@@ -170,27 +185,12 @@ alil {
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
+
+      <a href="swipe.html"><button>Next</button></a>
+
     </div>
+  </div>
 </form>
-
-
-
-
-<script>
-function move() {
-  var elem = document.getElementById("myBar");
-  var width = 1;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++;
-      elem.style.width = width + '%';
-    }
-  }
-}
-</script>
 
 </body>
 </html>
