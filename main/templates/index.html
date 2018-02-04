@@ -8,10 +8,7 @@ body {
   margin: 0;
   font-size: 40px;
   font-family: 'Oswald', sans-serif;
-  color: white;
-  background-image: url('./templates/cravesbg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
+  color: #fe9365;
 }
 
 
@@ -23,14 +20,7 @@ form {
   height: 600px;
   background-color: #900C3F;
   align-content: space-between;
-}
-
-input[type=text] {
-    width: 30%;
-    padding: 12px 12px;
-    margin: 8px 0;
-    display: inline-block;
-    box-sizing: border-box;
+  padding: 50px;
 }
 
 boxshadow {
@@ -86,7 +76,7 @@ boxshadow {
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: #eee;
+    background-color: white;
 }
 
 .restr {
@@ -94,12 +84,16 @@ boxshadow {
     margin: 15px;
 }
 
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
 .bxcontainer:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: gray;
 }
 
 .bxcontainer input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: #ffede5;
 }
 
 .checkmark:after {
@@ -118,7 +112,7 @@ boxshadow {
     width: 5px;
     height: 10px;
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 0 0 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -129,7 +123,7 @@ alic {
 }
 
 alil {
-    text-align: center;
+    text-align: left;
 }
 
 .button {
@@ -139,16 +133,22 @@ alil {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
 }
 
+div {
+    background-image: url('cravesbg.png');
+    background-size: 100% 100%;
+    border: 1px solid red;
+}
+
 </style>
 </head>
 
-<body>
+<body style "color= #f1da90">
 
 <div class="header">
   <h2 style="color: #ffede5">Craves</h2>
@@ -157,36 +157,31 @@ alil {
   </div>
 </div>
 
+<form>
 
-<form action="/action_page.php">
-    <div class="container">
-      <label>Name: </label>
-      <input type="text" placeholder=" " name="name" required>
+      <alic><label style="color: white"><font-size="70">Restrictions: </font-size><label></alic>
+        <li><alil><label class="bxcontainer">Vegan</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+      <li><alil><label class="bxcontainer">Vegetarian</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+      <li><alil><label class="bxcontainer">Gluten Free</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+      <li><alil><label class="bxcontainer">Lactose Intolerant</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+      <li><alil><label class="bxcontainer">Religious</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
 
-    <div class="restr">
-      <alic><label>Restrictions: <label></alic>
-      <alil><label class="bxcontainer">Vegan</alil>
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-      <alil><label class="bxcontainer">Vegetarian</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-      <alil><label class="bxcontainer">Gluten Free</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-      <alil><label class="bxcontainer">Lactose Intolerant</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-      <alil><label class="bxcontainer">Religious</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-
-      <button><a href="{{ url_for('swipe')}}">HYUCK</a></button>
+      <button><a href="{{ url_for('swipe')}}">Next</a></button>
 
     </div>
   </div>
