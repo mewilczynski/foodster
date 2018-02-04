@@ -5,34 +5,35 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
 <style>
 body {
-  margin: 0;
-  font-size: 28px;
+  margin: 8px 0;
+  font-size: 30px;
   font-family: 'Oswald', sans-serif;
   color: white;
 }
+
+
 form {
-    border-radius: 25px;
-    background: #73AD21;
-    align-items: center;
-    padding: 200px 15px;
+  margin-top: 400px;
+  margin-left: 400px;
+  margin-right: 400px;
+  border-radius: 20px;
+  background-color: #900C3F;
 }
 
 input[type=text] {
-    width: 100%;
+    width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
-.container {
-    padding: 16px;
+boxshadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .content{
-  align-items: flex-end;
-  flex: 4;
+  align-items: center;
 }
 
 .header {
@@ -40,14 +41,12 @@ input[type=text] {
   top: 0;
   z-index: 1;
   width: 100%;
-  align-content: center;
-  flex: 1;
   background-color: #fe9365;
 }
 
 .header h2 {
   text-align: center;
-  font-size: 100px;
+  font-size: 90px;
   font-family: 'Pacifico', sans-serif;
 }
 
@@ -63,16 +62,9 @@ input[type=text] {
   width: 0%;
 }
 
-span.psw {
-    float: right;
-    padding-top: 16px;
+.container {
+    padding: 16px;
 }
-
-.cancelbtn {
-       width: 100%;
-    }
-}
-
 
 </style>
 </head>
@@ -86,15 +78,17 @@ span.psw {
   </div>
 </div>
 
-<div class="content">
+
+<p id="boxshadow">
   <form action="/action_page.php">
     <div class="container">
-      <label><b>Your name</b></label>
-      <input type="text" placeholder="Enter name" name="name" required>
-
+      <label>NAME: </label>
+      <input type="text" placeholder=" " name="name" required>
     </div>
   </form>
-</div>
+</p>
+
+
 
 <script>
 function move() {
