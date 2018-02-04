@@ -47,32 +47,6 @@ body {
     animation-direction: forward;
 }
 
-.rbutton {
-    background-color: #fe9365;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.lbutton {
-    background-color: #fe9365;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
 form {
   margin-top: 400px;
   margin-left: 400px;
@@ -80,7 +54,8 @@ form {
   border-radius: 20px;
   height: 600px;
   background-color: #900C3F;
-  align-content: space-between;
+  padding 50px;
+  float content: space-around;
 }
 
 #cf {
@@ -103,20 +78,35 @@ form {
   opacity:0;
 }
 
-alir {
-    text-align: right;
-    padding-left: 40px;
-}
-
-alil {
-    text-align: left;
-    padding-right: 40px;
-}
-
 .responsive {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     height: auto;
+}
+
+.rbutton {
+    background-color: #fe9365; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.rbutton:hover {
+    background-color: #fe9365;
+    color: white;
+}
+
+.lbutton:hover {
+    background-color: #fe9365;
+    color: white;
 }
 
 </style>
@@ -131,12 +121,13 @@ alil {
 </div>
 
 <div>
-  <alil><input type="lbutton" class="lbutton" value="Left Button"></alil>
+  <button class="button rbutton">Right</button>
+  <button class="button lbutton">Left</button>
     <div id="cf">
-        <img class="bottom" class=responsive src="img1" width="600" height="400"/>
-        <img class="top" src="img2" />
+        <img class="bottom" class=responsive src="img1" width="600" height="400">
+        <img class="top" class=responsive src="img2" width="600" height="400" />
       </div>
-  <alir><input type="rbutton" class="rbutton" value="Right Button"></alir>
+  <input type="rbutton" class="rbutton" value="Right Button">
 </form>
 
 </body>
