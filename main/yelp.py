@@ -114,13 +114,15 @@ def query_api(categories, term, location, open_now):
     location1 = businesses[1]["location"]
     location2 = businesses[2]["location"]
 
-    print('{0} businesses found, querying business info ' \
-        'for the top three results: "{1}", "{2}", and "{3}" ...'.format(
-            len(businesses), name, name1, name2))
+    # print('{0} businesses found, querying business info ' \
+    #     'for the top three results: "{1}", "{2}", and "{3}" ...'.format(
+    #         len(businesses), name, name1, name2))
 
     # print('Results for business "{0}" found:'.format(name))
     # pprint.pprint(businesses[0]["price"], indent=1)
     # pprint.pprint(businesses[1]["price"], indent=1)
-    print('"{0}" \n "{1}" \n "{2}" \n' .format(name, price, location))
-    print('"{0}" \n "{1}" \n "{2}" \n' .format(name1, price1, location1))
-    print('"{0}" \n "{1}" \n "{2}" \n' .format(name2, price2, location2))
+    # print('"{0}" \n "{1}" \n "{2}" \n' .format(name, price, location))
+    # print('"{0}" \n "{1}" \n "{2}" \n' .format(name1, price1, location1))
+    # print('"{0}" \n "{1}" \n "{2}" \n' .format(name2, price2, location2))
+
+    return name, name1, name2
