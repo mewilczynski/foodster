@@ -87,7 +87,7 @@ def get_business(api_key, business_id):
     return request(API_HOST, business_path, api_key)
 
 
-def query_api(categories, term, location, open_now):
+def query_api(categories, term, location, open_now, radius):
     """Queries the API by the input values from the user.
     Args:
         term (str): The search term to query.
@@ -110,9 +110,9 @@ def query_api(categories, term, location, open_now):
     price1 = businesses[1]["price"]
     price2 = businesses[2]["price"]
 
-    location = businesses[0]["location"]
-    location1 = businesses[1]["location"]
-    location2 = businesses[2]["location"]
+    location = businesses[0]["location"]["address1"]
+    location1 = businesses[1]["location"]["address1"]
+    location2 = businesses[2]["location"]["address1"]
 
     # print('{0} businesses found, querying business info ' \
     #     'for the top three results: "{1}", "{2}", and "{3}" ...'.format(
@@ -125,4 +125,4 @@ def query_api(categories, term, location, open_now):
     # print('"{0}" \n "{1}" \n "{2}" \n' .format(name1, price1, location1))
     # print('"{0}" \n "{1}" \n "{2}" \n' .format(name2, price2, location2))
 
-    return name, name1, name2
+    return name, name1, name2, location, location1, location2

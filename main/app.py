@@ -27,10 +27,14 @@ def swipe():
     print(list_1)
     print(list_2)
     print(list_3)
-    name, name1, name2 = query_api("food", ', '.join(cf_list), "Tampa, FL", True)
+
+    name, name1, name2, location, location1, location2 = query_api("food", ', '.join(cf_list), "11200 sw 8th Street, Miami, FL", True, 40000)
     print(name)
     print(name1)
     print(name2)
+    print(location)
+    print(location1)
+    print(location2)
     return render_template('swipe.html')
 
 @app.route('/handle_data', methods=['POST'])
