@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-size: 40px;
+  font-family: 'Oswald', sans-serif;
+  color: #fe9365;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+form {
+  margin-top: 400px;
+  margin-left: 400px;
+  margin-right: 400px;
+  border-radius: 20px;
+  height: 600px;
+  background-color: #900C3F;
+  align-content: space-between;
+  padding: 50px;
+}
+
+boxshadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content{
+  align-items: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #fe9365;
+}
+
+.header h2 {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Pacifico', sans-serif;
+}
+
+#progress-container {
+  width: 100%;
+  height: 25px;
+  background: #fff7b5;
+}
+
+.#progress-bar {
+  height: 25px;
+  background: #DAF7A6;
+  width: 0%;
+}
+
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bxcontainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+}
+
+.restr {
+    position:relative;
+    margin: 15px;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+.bxcontainer:hover input ~ .checkmark {
+    background-color: gray;
+}
+
+.bxcontainer input:checked ~ .checkmark {
+    background-color: #ffede5;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.bxcontainer input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.bxcontainer .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 0 0 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.bg {
+    /* The image used */
+    background-image: url("cravesbg.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+alic {
+    text-align: center;
+}
+
+alil {
+    text-align: left;
+}
+
+.button {
+    background-color: #fe9365;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Roboto Slab', serif;
+}
+
+</style>
+</head>
+
+<body style "color= #f1da90">
+
+<div class="header">
+  <h2 style="color: #ffede5">Craves</h2>
+  <div id="progress-container">
+    <div id="myBar"></div>
+  </div>
+</div>
+
+<div class="bg"></div>
+
+<form>
+
+      <alic><label style="color: white"><font-size="70">Restrictions: </font-size><label></alic>
+        <li><alil><label class="bxcontainer">Vegan</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+      <li><alil><label class="bxcontainer">Vegetarian</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+      <li><alil><label class="bxcontainer">Gluten Free</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+      <li><alil><label class="bxcontainer">Lactose Intolerant</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+      <li><alil><label class="bxcontainer">Religious</alil>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label></li>
+
+      <button class="button"><a href="{{ url_for('swipe')}}">Next</a></button>
+
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
