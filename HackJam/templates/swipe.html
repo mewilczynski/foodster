@@ -11,6 +11,7 @@ body {
   font-size: 40px;
   font-family: 'Oswald', sans-serif;
   color: white;
+  background-image: url("https://s13.postimg.org/k8irr1pl1/cravesbg.png");
 }
 
 .header {
@@ -39,15 +40,6 @@ body {
   width: 0%;
 }
 
-.animate{
-    width: 500px;
-    height: 600px;
-    position: relative;
-    animation-name: swipe;
-    animation-duration: 4s;
-    animation-direction: forward;
-}
-
 .fontContainer {
     padding-left: 10px;
     padding-right: 10px;
@@ -56,7 +48,7 @@ body {
 }
 
 form {
-    margin-top: 400px;
+    margin-top: 250px;
     margin-left: 400px;
     margin-right: 400px;
     border-radius: 20px;
@@ -67,13 +59,16 @@ form {
 }
 
 .innercontainer {
-  position: center;
+  align: center;
+  padding-left: 300px;
+  padding-right: 300px;
 
 }
 
 .container {
   position: relative;
   width: 50%;
+  padding-left: 400px;
 }
 
 .image {
@@ -94,10 +89,10 @@ form {
   transition: .5s ease;
 }
 
-/* .container: .overlay {
+.container: .overlay {
   width: 100%;
   left: 0;
-}  */
+}
 
 .button {
     background-color: #fe9365; /* Green */
@@ -120,10 +115,45 @@ form {
     color: white;
 }
 
+.footer {
+   position: relative;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 25px;
+   background-color: #fe9365;
+   color: white;
+   text-align: center;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("https://s13.postimg.org/k8irr1pl1/cravesbg.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 </style>
+
+<!-- <script>
+
+function lbutFunction() {
+  document.getElementById("im1").src = "http://cdn1.bostonmagazine.com/wp-content/uploads/sites/2/2017/07/ice-cream-boston.jpg";
+}
+
+</script> -->
+
 </head>
 
-<body>
+<body >
+
+
 
 <div class="header">
   <h2 style="color: #ffede5">Craves</h2>
@@ -132,75 +162,28 @@ form {
   </div>
 </div>
 
-//style="width:500px;height:600px;"
+<div class="bg"></div>
 
 <form id="form1">
   <div id="container">
-  <!-- <div class="container">
-    <div class="innercontainer"> -->
-  <button class="button" id="lbut" onclick="lbutFunction()">Left</button>
-      <img id="im1" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg" alt="" class="image" style="width:400px">
-    <!-- <div class="overlay">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg" alt="burger n fries" class="image" style="width:100px; height:200px;">
-    </div> -->
-  <!-- </div> -->
 
-  <button class="button" id="rbut" onclick="document.getElementById('im1').src="https://recipes.heart.org/-/media/aha/recipe/recipe-images/mediterranean-salad.jpg"">Right</button>
+
+    <div class="innercontainer">
+      <img id="im1" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg" alt="" class="image" style="width:400px;">
+    <div class="overlay">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg" alt="burger n fries" class="image" style="width:100px; height:200px;">
+    </div>
+   </div>
+     <div class="container">
+      <button class="button" id="lbut" onclick="lbutFunction()">Left</button>
+  <button class="button" id="rbut" onclick="rbutFunction()" style="align:right">Right</button>
+</div>
 </div>
 </form>
 
-<script>
-
-var food_img = ["https://recipes.heart.org/-/media/aha/recipe/recipe-images/mediterranean-salad.jpg",
-            "https://media1.s-nbcnews.com/j/newscms/2017_20/1215661/baked-chicken-today-170519-tease_15b214baba5431d761c7a46cf08e062c.today-inline-large.jpg",
-            // 'https://recipes.heart.org/recipes/1128/mediterranean-salad',
-            // 'http://www.ruchiskitchen.com/wp-content/uploads/2016/12/spicy-peanut-noodles-recipe-14.jpg',
-            // 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg/1200px-001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg',
-            // 'http://cdn1.bostonmagazine.com/wp-content/uploads/sites/2/2017/07/ice-cream-boston.jpg',
-            // 'https://www.firehousesubs.com/media/1740/large-tbr.jpg',
-            // 'https://images-gmi-pmc.edge-generalmills.com/2031a382-71dc-4fd0-9ef7-72d011a9eebd.jpg',
-            // 'http://www.saturdayeveningpost.com/wp-content/uploads/satevepost/seafood.jpg',
-            // 'https://assets.epicurious.com/photos/57bdeab384c001120f6164fc/master/pass/barba-yiannis-grilled-lamb.jpg',
-            // 'https://img.leafcdn.tv/640/photos.demandstudios.com/getty/article/181/28/186485589.jpg',
-            // 'https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/breakfast_breakfast-classics_big-two-do-breakfast.jpg',
-            // 'http://www.hot-dog.org/sites/default/files/pictures/hot-dogs-on-the-grill-sm.jpg',
-            // 'https://fthmb.tqn.com/dsaD2kvRQ_P4idUlvTUwtOIJj1o=/3865x2576/filters:fill(auto,1)/healthy-tofu-106442406-5882426f5f9b58bdb3940291.jpg',
-            // 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/2/0/BXSP01H_soft-hard-boiled-eggs-02_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371595523837.jpeg',
-          ];
-
-function rbutFunction() {
-	//var swipe = "Right";
-  //var hold = "True";
-  var food_img = ["https://recipes.heart.org/-/media/aha/recipe/recipe-images/mediterranean-salad.jpg",
-              "https://media1.s-nbcnews.com/j/newscms/2017_20/1215661/baked-chicken-today-170519-tease_15b214baba5431d761c7a46cf08e062c.today-inline-large.jpg",
-              // 'https://recipes.heart.org/recipes/1128/mediterranean-salad',
-              // 'http://www.ruchiskitchen.com/wp-content/uploads/2016/12/spicy-peanut-noodles-recipe-14.jpg',
-              // 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg/1200px-001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg',
-              // 'http://cdn1.bostonmagazine.com/wp-content/uploads/sites/2/2017/07/ice-cream-boston.jpg',
-              // 'https://www.firehousesubs.com/media/1740/large-tbr.jpg',
-              // 'https://images-gmi-pmc.edge-generalmills.com/2031a382-71dc-4fd0-9ef7-72d011a9eebd.jpg',
-              // 'http://www.saturdayeveningpost.com/wp-content/uploads/satevepost/seafood.jpg',
-              // 'https://assets.epicurious.com/photos/57bdeab384c001120f6164fc/master/pass/barba-yiannis-grilled-lamb.jpg',
-              // 'https://img.leafcdn.tv/640/photos.demandstudios.com/getty/article/181/28/186485589.jpg',
-              // 'https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/breakfast_breakfast-classics_big-two-do-breakfast.jpg',
-              // 'http://www.hot-dog.org/sites/default/files/pictures/hot-dogs-on-the-grill-sm.jpg',
-              // 'https://fthmb.tqn.com/dsaD2kvRQ_P4idUlvTUwtOIJj1o=/3865x2576/filters:fill(auto,1)/healthy-tofu-106442406-5882426f5f9b58bdb3940291.jpg',
-              // 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/2/0/BXSP01H_soft-hard-boiled-eggs-02_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371595523837.jpeg',
-            ];
-  var i=0;
-  var edit = document.getElementById("form1");
-  edit.src = food_img[i];
-  i++;
-
-}
-
-function lbutFunction() {
-	var swipe = "Left";
-  var hold = "False";
-
-}
-
-</script>
+<div class="footer">
+  <p style="font-size: 15px;">Powered by: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Yelp_Logo.svg/1200px-Yelp_Logo.svg.png" style="height: 15px;"></p>
+</div>
 
 </body>
 </html>

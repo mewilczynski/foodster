@@ -17,13 +17,12 @@ body, html {
 }
 
 form {
-  margin-top: 400px;
+  margin-top: 200px;
   margin-left: 400px;
   margin-right: 400px;
   border-radius: 20px;
   height: 600px;
   background-color: #900C3F;
-  align-content: space-between;
   padding: 50px;
 }
 
@@ -45,6 +44,7 @@ boxshadow {
 
 .header h2 {
   text-align: center;
+  float: inherit;
   font-size: 50px;
   font-family: 'Pacifico', sans-serif;
 }
@@ -84,12 +84,13 @@ boxshadow {
 }
 
 .restr {
-    position:relative;
+    position: relative;
     margin: 15px;
 }
 
 input[type=checkbox] {
-  transform: scale(1.5);
+  transform: scale(2);
+  align-self: margin-left;
 }
 
 .bxcontainer:hover input ~ .checkmark {
@@ -124,14 +125,14 @@ input[type=checkbox] {
 
 .bg {
     /* The image used */
-    background-image: url("cravesbg.png");
+    background-image: url("https://s13.postimg.org/k8irr1pl1/cravesbg.png");
 
     /* Full height */
     height: 100%;
 
     /* Center and scale the image nicely */
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
 }
 
@@ -157,6 +158,16 @@ alil {
     font-family: 'Roboto Slab', serif;
 }
 
+.footer {
+   position: relative;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 25px;
+   background-color: #fe9365;
+   color: white;
+   text-align: center;
+}
 </style>
 </head>
 
@@ -174,25 +185,24 @@ alil {
 <form>
 
       <alic><label style="color: white"><font-size="70">Restrictions: </font-size><label></alic>
-        <li><alil><label class="bxcontainer">Vegan</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
+        <li><alil>        <input type="checkbox">
+                <span class="checkmark"><label class="bxcontainer">Vegan</alil>
+</span>
       </label></li>
-      <li><alil><label class="bxcontainer">Vegetarian</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
+      <li><alil>        <input type="checkbox">
+              <span class="checkmark"><label class="bxcontainer">Vegetarian</alil>
+</span>
       </label></li>
-      <li><alil><label class="bxcontainer">Gluten Free</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
+      <li><alil>        <input type="checkbox">
+              <span class="checkmark"><label class="bxcontainer">Gluten Free</alil>
+</span>
       </label></li>
-      <li><alil><label class="bxcontainer">Lactose Intolerant</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
+      <li><alil>        <input type="checkbox">
+              <span class="checkmark"></span><label class="bxcontainer">Lactose Intolerant</alil>
       </label></li>
-      <li><alil><label class="bxcontainer">Religious</alil>
-        <input type="checkbox">
-        <span class="checkmark"></span>
+      <li><alil>        <input type="checkbox">
+              <span class="checkmark"><label class="bxcontainer">Religious</alil>
+</span>
       </label></li>
 
       <button class="button"><a href="{{ url_for('swipe')}}">Next</a></button>
@@ -200,6 +210,10 @@ alil {
     </div>
   </div>
 </form>
+
+<div class="footer">
+  <p style="font-size: 15px;">Powered by: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Yelp_Logo.svg/1200px-Yelp_Logo.svg.png" style="height: 15px;"></p>
+</div>
 
 </body>
 </html>
