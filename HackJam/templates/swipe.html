@@ -169,14 +169,14 @@ function lbutFunction() {
 
 
     <div class="innercontainer">
-      <img id="im1" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg" alt="" class="image" style="width:400px;">
+      <img id="im1" src={{Pic}} alt="" class="image" style="width:400px;">
     <div class="overlay">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg" alt="burger n fries" class="image" style="width:100px; height:200px;">
+      <img src={{Pic}} class="image" style="width:100px; height:200px;">
     </div>
    </div>
      <div class="container">
-      <button class="button" id="lbut" onclick="lbutFunction()">Left</button>
-  <button class="button" id="rbut" onclick="rbutFunction()" style="align:right">Right</button>
+      <button class="button" id="lbut" <a href="{{ url_for('swipe')}}">Left</a></button>
+  <button class="button" id="rbut" style="align:right"><a href="{{ url_for('swipe')}}">Right</a></button>
 </div>
 </div>
 </form>
