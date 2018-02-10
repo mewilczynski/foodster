@@ -21,8 +21,7 @@ food_img = ['https://recipes.heart.org/-/media/aha/recipe/recipe-images/mediterr
             'https://img.leafcdn.tv/640/photos.demandstudios.com/getty/article/181/28/186485589.jpg',
             'https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/breakfast_breakfast-classics_big-two-do-breakfast.jpg',
             'http://www.hot-dog.org/sites/default/files/pictures/hot-dogs-on-the-grill-sm.jpg',
-            'https://fthmb.tqn.com/dsaD2kvRQ_P4idUlvTUwtOIJj1o=/3865x2576/filters:fill(auto,1)/healthy-tofu-106442406-5882426f5f9b58bdb3940291.jpg',
-            'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/2/0/BXSP01H_soft-hard-boiled-eggs-02_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371595523837.jpeg',
+            'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/2/0/BXSP01H_soft-hard-boiled-eggs-02_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371595523837.jpeg'
             ]
 global j
 j = 0
@@ -35,22 +34,36 @@ def home():
     return render_template('index.html')
 
 @app.route('/swipe', methods=['GET'])
+
 def swipe():
     cf_list = ProcessImage(food_img[j])
-    list_1, list_2, list_3 = ProcessImageLabels(food_img[j])
+
+    print(cf_list)
+
+    global j
+    j += 1
+
+    '''
+    list_1, list_2, list_3, list_4, list_5, list_6, list_7, list_8, list_9, list_10 = ProcessImageLabels(food_img[10])
     print(list_1)
     print(list_2)
     print(list_3)
-    #j = j + 1
+    print(list_4)
+    print(list_5)
+    print(list_6)
+    print(list_7)
+    print(list_8)
+    print(list_9)
+    print(list_10)
+    '''
 
-    name, name1, name2, location, location1, location2 = query_api("food", ', '.join(cf_list), "11200 sw 8th Street, Miami, FL", True, 40000)
-    print(name)
-    print(name1)
-    print(name2)
-    print(location)
-    print(location1)
-    print(location2)
-    return render_template('swipe.html', mark = name)
+    name, name1, name2, location, location1, location2 = query_api("food", ', '.join(cf_list), "4202 E Fowler Ave, Tampa, FL", True, 40000)
+    print(name + "\t\t" + location)
+    print(name1 + "\t\t" + location1)
+    print(name2 + "\t\t" + location2)
+
+    return render_template('swipe.html', Pic=food_img[j], Name1=name,Loc1=location,Name2=name1,Loc2=location1,Name3=name2,Loc3=location2)
+    #<p>Here is my variable: {{ variable }}</p>
 
 @app.route('/handle_data', methods=['POST'])
 def handle_data():
