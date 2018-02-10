@@ -89,7 +89,7 @@ form {
   transition: .5s ease;
 }
 
-.container:hover .overlay {
+.container:onclick .overlay {
   width: 100%;
   left: 0;
 }
@@ -127,20 +127,33 @@ form {
   </div>
 </div>
 
+//style="width:500px;height:600px;"
+
 <form>
   <div id="container">
-  <button class="button">Right</button>
-  <button class="button">Left</button>
-    <div id="cf">
-        <img class="bottom" class=responsive src="img1" style="width:500px;height:600px;">
-        <img class="top" class=responsive src="img2" style="width:500px;height:600px;" />
-      </div>
-      <padding-top: "500"><padding-right: "50"><padding-left: "50">
-      <label>Label1</label>
-      <label>Label2</label>
-      <label>Label3</label></pad></pad></pad>
-    </2F>
+  <button class="button" id="rbut" onclick="rbutFunction()">Right</button>
+  <button class="button" id="lbut" onclick="lbutFunction()">Left</button>
+  <div class="container">
+  <img src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiY2qrJ75vZAhWMwVkKHeNzBTQQjRwIBw&url=http%3A%2F%2Fwww.foodandwine.com%2Ftravel%2Frestaurants%2Fbest-gas-station-foods&psig=AOvVaw1eeohjkGU_Wa0cKc3otyA8&ust=1518370103571942" alt="chicken" class="image" style="width:500px;height:600px;">
+  <div class="overlay">
+    <div class="text">Hello World</div>
+  </div>
+</div>
 </form>
+
+<script>
+function rbutFunction() {
+	var swipe = "Right";
+  var hold = "True";
+
+}
+
+function lbutFunction() {
+	var swipe = "Left";
+  var hold = "False";
+
+}
+</script>
 
 </body>
 </html>
