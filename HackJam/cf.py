@@ -11,7 +11,7 @@ def ProcessImage(imagelink):
     list_p = []
     for i in range(0,10):
         list_p.append(predict["outputs"][0]["data"]["concepts"][i]["name"])
-    
+
     return list_p
 '''
 def ProcessImageLabels(imagelink):

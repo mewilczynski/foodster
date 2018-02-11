@@ -23,10 +23,10 @@ food_img = ['https://recipes.heart.org/-/media/aha/recipe/recipe-images/mediterr
             'http://www.hot-dog.org/sites/default/files/pictures/hot-dogs-on-the-grill-sm.jpg',
             'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/2/0/BXSP01H_soft-hard-boiled-eggs-02_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371595523837.jpeg'
             ]
-global j
-j = 0
 
 app = Flask(__name__)
+
+i = -1
 
 @app.route('/')
 def home():
@@ -36,40 +36,22 @@ def home():
 @app.route('/swipe', methods=['GET'])
 
 def swipe():
-    cf_list = ProcessImage(food_img[j])
+
+    global i
+    i = i + 1
+
+    cf_list = ProcessImage(food_img[i])
 
     print(cf_list)
 
-    global j
-    j += 1
-
-    '''
-    list_1, list_2, list_3, list_4, list_5, list_6, list_7, list_8, list_9, list_10 = ProcessImageLabels(food_img[10])
-    print(list_1)
-    print(list_2)
-    print(list_3)
-    print(list_4)
-    print(list_5)
-    print(list_6)
-    print(list_7)
-    print(list_8)
-    print(list_9)
-    print(list_10)
-    '''
 
     name, name1, name2, location, location1, location2 = query_api("food", ', '.join(cf_list), "4202 E Fowler Ave, Tampa, FL", True, 40000)
     print(name + "\t\t" + location)
     print(name1 + "\t\t" + location1)
     print(name2 + "\t\t" + location2)
 
-    return render_template('swipe.html', Pic=food_img[j], Name1=name,Loc1=location,Name2=name1,Loc2=location1,Name3=name2,Loc3=location2)
-    #<p>Here is my variable: {{ variable }}</p>
 
-@app.route('/handle_data', methods=['POST'])
-def handle_data():
-    projectpath = request.form['projectFilepath']
-
-    return
+    return render_template('swipe.html', Pic=food_img[i], Name1=name,Loc1=location,Name2=name1,Loc2=location1,Name3=name2,Loc3=location2)
 
 
 if __name__ == "__main__":
